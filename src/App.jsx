@@ -7,13 +7,14 @@ import Book from './components/Book.jsx';
 
 function App() {
   const [reservedSeats, setReservedSeats] = useState(0);
+  const [ticketPrice, setTicketPrice] = useState(0);
   
   return (
     <div className="app">
-      <MovieContainer />
+      <MovieContainer ticketPrice={ticketPrice} setTicketPrice={setTicketPrice}/>
       <Showcase />
       <SeatBooking reservedSeats={reservedSeats} setReservedSeats={setReservedSeats} />
-      <Book reservedSeats={reservedSeats} />
+      <Book reservedSeats={reservedSeats} ticketPrice={ticketPrice} />
     </div>
   );
 }

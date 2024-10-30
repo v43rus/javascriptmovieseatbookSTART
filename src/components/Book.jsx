@@ -1,13 +1,16 @@
 import React from "react";
 
-function Book({ reservedSeats }) {
+function Book({ reservedSeats, ticketPrice }) {
     return (
         <div className="container">
-            <p className="text">
-                You have selected <span id="count">{ reservedSeats }</span> seats for a price of $<span
-                id="total">0</span>
-            </p>
-            <button className="book-btn"><b>Book</b></button>
+            { /* Ticket Text */ }
+                {ticketPrice === 0 && <p className="text">Please select a movie to book seats</p>}
+                {ticketPrice !== 0 && reservedSeats > 0 &&<p className="text">You have selected <span id="count">{reservedSeats} </span>
+                seats(s) for a price of $<span id="total">{ticketPrice && (ticketPrice * reservedSeats)}</span></p>}
+                {ticketPrice !== 0 && reservedSeats === 0 && <p className="text">Please select your seat(s)</p>}
+    
+            { /* Book Button */ }
+            {ticketPrice !== 0 && reservedSeats > 0 && <button className="book-btn"><b>Book</b></button>}
         </div>
     );
 }
