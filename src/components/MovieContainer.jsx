@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-function MovieContainer( { ticketPrice, setTicketPrice } ) {
+function MovieContainer( { setTicketPrice } ) {
     const [movies, setMovies] = useState([]);
-    const [selectedMovie, setSelectedMovie] = useState(1);
+    const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
         fetch('movies.json')
@@ -26,6 +27,7 @@ function MovieContainer( { ticketPrice, setTicketPrice } ) {
     return (
         <div className="movie-container">
             {selectedMovie && (<img src={selectedMovie.Poster} alt={selectedMovie.Title} id="movie-poster"/>)}
+            {selectedMovie == null && (<img src="./posters/filmstaden.jpg" alt="Filmstaden" id="movie-poster"/>)}
 
             <label htmlFor="movie">Pick a movie:</label>
             <select name="movie" id="movie" onChange={handleMovieChange}>
@@ -37,5 +39,8 @@ function MovieContainer( { ticketPrice, setTicketPrice } ) {
         </div>
     );
 }
+MovieContainer.propTypes = {
+    setTicketPrice: PropTypes.func.isRequired,
+};
 
 export default MovieContainer;

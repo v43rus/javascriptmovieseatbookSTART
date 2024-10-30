@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import PropTypes from 'prop-types';
 
-function SeatBooking({ reservedSeats, setReservedSeats }) {
+function SeatBooking({ setReservedSeats }) {
     useEffect(() => {
         const emptySeats = document.querySelectorAll('.row .seat:not(.occupied)');
         
@@ -79,5 +80,8 @@ function SeatBooking({ reservedSeats, setReservedSeats }) {
         </div>
     );
 }
+SeatBooking.propTypes = {
+    setReservedSeats: PropTypes.func.isRequired,
+};
 
 export default SeatBooking;

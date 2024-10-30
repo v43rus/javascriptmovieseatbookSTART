@@ -11,9 +11,9 @@ function App() {
   
   return (
     <div className="app">
-      <MovieContainer ticketPrice={ticketPrice} setTicketPrice={setTicketPrice}/>
+      <MovieContainer setTicketPrice={setTicketPrice}/>
       <Showcase />
-      <SeatBooking reservedSeats={reservedSeats} setReservedSeats={setReservedSeats} />
+      <SeatBooking setReservedSeats={setReservedSeats} />
       <Book reservedSeats={reservedSeats} ticketPrice={ticketPrice} />
     </div>
   );

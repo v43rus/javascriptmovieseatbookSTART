@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 function Book({ reservedSeats, ticketPrice }) {
     return (
@@ -14,5 +15,10 @@ function Book({ reservedSeats, ticketPrice }) {
         </div>
     );
 }
+
+Book.propTypes = {
+    reservedSeats: PropTypes.number.isRequired,
+    ticketPrice: PropTypes.number.isRequired,
+};
 
 export default Book;
