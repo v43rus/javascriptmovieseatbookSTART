@@ -152,3 +152,6 @@ p.text span {
   transform: scale(1.1);
 }
 
+.btn-container {
+  height: 115px;
+}
