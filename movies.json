@@ -1,0 +1,37 @@
+[
+    {
+      "Id": 1,
+      "Title": "Iron Man",
+      "Year": "2008",
+      "Price": 120,
+      "Poster": "./posters/iron-man.jpg"
+    },
+    {
+      "Id": 2,
+      "Title": "Iron Man 2",
+      "Year": "2010",
+      "Price": 120,
+      "Poster": "./posters/iron-man-2.jpg"
+    },
+    {
+      "Id": 3,
+        "Title": "Iron Man 3",
+        "Year": "2013",
+        "Price": 120,
+        "Poster": "./posters/iron-man-3.jpg"
+    },
+    {
+      "Id": 4,
+        "Title": "Avengers Inifinity War",
+        "Year": "2018",
+        "Price": 150,
+        "Poster": "./posters/avengers-infinitywar.jpg"
+    },
+    {
+      "Id": 5,
+        "Title": "Avengers Endgame",
+        "Year": "2019",
+        "Price": 150,
+        "Poster": "./posters/avengers-endgame.jpg"
+    }
+]

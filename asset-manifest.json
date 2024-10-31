@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/javascriptmovieseatbookSTART/static/css/main.d2d83ce1.css",
+    "main.js": "/javascriptmovieseatbookSTART/static/js/main.b6ba0165.js",
+    "index.html": "/javascriptmovieseatbookSTART/index.html",
+    "main.d2d83ce1.css.map": "/javascriptmovieseatbookSTART/static/css/main.d2d83ce1.css.map",
+    "main.b6ba0165.js.map": "/javascriptmovieseatbookSTART/static/js/main.b6ba0165.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2d83ce1.css",
+    "static/js/main.b6ba0165.js"
+  ]
+}
