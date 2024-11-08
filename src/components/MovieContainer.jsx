@@ -6,8 +6,17 @@ function MovieContainer( { setTicketPrice } ) {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
-        fetch('./movies.json')
-            .then(response => response.json())
+        fetch('./javascriptmovieseatbookSTART/movies.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                if (response.headers.get('content-type')?.includes('application/json')) {
+                    return response.json();
+                } else {
+                    throw new Error('Response is not JSON');
+                }
+            })
             .then(data => setMovies(data))
             .catch(error => console.error('Error fetching movies:', error));
     }, []);
