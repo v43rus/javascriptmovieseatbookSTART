@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 function MovieContainer( { setTicketPrice } ) {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    const [filmstaden, setFilmstaden] = useState(null);
 
     useEffect(() => {
         fetch('./javascriptmovieseatbookSTART/movies.json')
@@ -21,6 +22,25 @@ function MovieContainer( { setTicketPrice } ) {
             .catch(error => console.error('Error fetching movies:', error));
     }, []);
 
+    useEffect(() => {
+        fetch('./javascriptmovieseatbookSTART/posters/filmstaden.jpg')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                if (response.headers.get('content-type')?.includes('image')) {
+                    return response.blob();
+                } else {
+                    throw new Error('Response is not an image');
+                }
+            })
+            .then(imageBlob => {
+                const imageObjectURL = URL.createObjectURL(imageBlob);
+                setFilmstaden(imageObjectURL);
+            })
+            .catch(error => console.error('Error fetching filmstaden image:', error));
+    }, []);
+
     const handleMovieChange = (event) => {
         const selectedMovieId = event.target.value;
         if (!selectedMovieId) {
@@ -36,7 +56,7 @@ function MovieContainer( { setTicketPrice } ) {
     return (
         <div className="movie-container">
             {selectedMovie && (<img src={selectedMovie.Poster} alt={selectedMovie.Title} id="movie-poster"/>)}
-            {selectedMovie == null && (<img src="./javascriptmovieseatbookSTART/posters/filmstaden.jpg" alt="Filmstaden" id="movie-poster"/>)}
+            {selectedMovie == null && ( <img src={filmstaden} alt="Filmstaden" id="movie-poster" />)}
 
             <label htmlFor="movie">Pick a movie:</label>
             <select name="movie" id="movie" onChange={handleMovieChange}>
