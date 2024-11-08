@@ -6,7 +6,7 @@ function MovieContainer( { setTicketPrice } ) {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
-        fetch('/javascriptmovieseatbookSTART/movies.json')
+        fetch('./movies.json')
             .then(response => response.json())
             .then(data => setMovies(data))
             .catch(error => console.error('Error fetching movies:', error));
