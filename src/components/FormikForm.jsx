@@ -2,7 +2,11 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
 
-function FormikForm({isFormVisible, setIsFormVisible}) {
+function FormikForm({ isFormVisible, setIsFormVisible }) {
+    
+    function CloseBookingForm() {
+        setIsFormVisible(false);
+    }
     
     return isFormVisible &&
     <div>
@@ -30,7 +34,7 @@ function FormikForm({isFormVisible, setIsFormVisible}) {
         >
             {({ isSubmitting }) => (
                     <Form className="form">
-                        <button>Text</button>
+                        <button onClick="CloseBookingForm" id="close-form-btn">X</button>
                     <Field type="text" name="name" placeholder="Full Name" />
                     <ErrorMessage name="name" component="div" />
                     <Field type="tel" name="phone" placeholder="Phone Number" />
