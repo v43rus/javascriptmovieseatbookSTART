@@ -29,7 +29,8 @@ function FormikForm({isFormVisible, setIsFormVisible}) {
             }}
         >
             {({ isSubmitting }) => (
-                <Form className="form">
+                    <Form className="form">
+                        <button>Text</button>
                     <Field type="text" name="name" placeholder="Full Name" />
                     <ErrorMessage name="name" component="div" />
                     <Field type="tel" name="phone" placeholder="Phone Number" />
