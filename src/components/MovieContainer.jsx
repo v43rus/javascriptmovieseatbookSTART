@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 function MovieContainer( { setTicketPrice } ) {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
-    const [filmstaden, setFilmstaden] = useState(null);
 
     useEffect(() => {
         fetch('./javascriptmovieseatbookSTART/movies.json')
