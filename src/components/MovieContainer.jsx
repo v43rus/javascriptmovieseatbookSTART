@@ -36,6 +36,7 @@ function MovieContainer( { setTicketPrice } ) {
     return (
         <div className="movie-container">
             {selectedMovie && (<img src={selectedMovie.Poster} alt={selectedMovie.Title} id="movie-poster"/>)}
+            {selectedMovie == null && ( <img src="./javascriptmovieseatbookSTART/posters/filmstaden.jpg" alt="Filmstaden" id="movie-poster" />)}
 
             <label htmlFor="movie">Pick a movie:</label>
             <select name="movie" id="movie" onChange={handleMovieChange}>
