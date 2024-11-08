@@ -20,10 +20,8 @@ function MovieContainer( { setTicketPrice } ) {
             })
             .then(data => setMovies(data))
             .catch(error => console.error('Error fetching movies:', error));
-    }, []);
-
-    useEffect(() => {
-        fetch('./javascriptmovieseatbookSTART/posters/filmstaden.jpg')
+        
+            fetch('./javascriptmovieseatbookSTART/posters/filmstaden.jpg')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
