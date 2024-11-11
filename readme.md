@@ -44,3 +44,9 @@ npm deploy
 - Moviecontainer.jsx är en av de primära komponenterna som resten av applikationen bygger på då den innehåller logiken för att ändra vilken den valda filmen är och modulen 'Book' hämtar biljettpris från den, det är även den som hanterar logiken för att ändra postern.
 - En annan central komponent är SeatBooking.jsx som skickar över antalet säten till 'Book' och hanterar logiken för att markera och avmarkera säten. Det är även här man hade kunnat implementera hämtning av livedata från en databas istället för att använda en hårdkodad sätesmap som vi gör i detta projektet.
 - Book.jsx står för text och boknings-knapp. Med hjälp av datan den hämtar från de andra två komponenterna, avgör den vilken text är lämplig med hjälp av Reacts "if-satser" och om den skall visa 'Book'-knappen eller inte.
+
+
+## Github Actions
+
+Jag fick Github Actions att funka men får det inte att funka samtidigt som det lokala projektet går att köra. Detta har med paths att göra och kan få antingen det ena eller andra att funka genom att modifiera path:en till movies.json.
+om jagz lägger till ```sh './javascriptmovieseatbookSTART/' ``` före resten av path:en jag använder när jag kör lokalt så får det projektet att funka på Github Actions. Dock tycker jag att det var viktigare för projektet att funka lokalt så valde att behålla original path:en.
