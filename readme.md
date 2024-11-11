@@ -49,4 +49,4 @@ npm deploy
 ## Github Actions
 
 Jag fick Github Actions att funka men får det inte att funka samtidigt som det lokala projektet går att köra. Detta har med paths att göra och kan få antingen det ena eller andra att funka genom att modifiera path:en till movies.json.
-om jagz lägger till ```sh './javascriptmovieseatbookSTART/' ``` före resten av path:en jag använder när jag kör lokalt så får det projektet att funka på Github Actions. Dock tycker jag att det var viktigare för projektet att funka lokalt så valde att behålla original path:en.
+om jagz lägger till ``` './javascriptmovieseatbookSTART/' ``` före resten av path:en jag använder när jag kör lokalt så får det projektet att funka på Github Actions. Dock tycker jag att det var viktigare för projektet att funka lokalt så valde att behålla original path:en.
