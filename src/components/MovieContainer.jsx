@@ -6,19 +6,19 @@ function MovieContainer( { setTicketPrice } ) {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
-        fetch('./javascriptmovieseatbookSTART/movies.json')
-            .then(response => {
+        const fetchMovies = async () => {
+            try {
+                const response = await fetch('https://gist.githubusercontent.com/v43rus/07f1f2339fd8353be8eac2677f45114a/raw/4779f30ea9687106798c8c007bf7caad9a9fda80/movies.json');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                if (response.headers.get('content-type')?.includes('application/json')) {
-                    return response.json();
-                } else {
-                    throw new Error('Response is not JSON');
-                }
-            })
-            .then(data => setMovies(data))
-            .catch(error => console.error('Error fetching movies:', error));
+                const data = await response.json();
+                setMovies(data);
+            } catch (error) {
+                console.error('Error fetching movies:', error);
+            }
+        };
+        fetchMovies();
     }, []);
 
     const handleMovieChange = (event) => {
